@@ -5,6 +5,7 @@ import Intro from './components/intro/intro';
 import About from './components/about/about';
 import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
+import styles from './index.css';
 
 const App = class App extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ const App = class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={styles.main}>
                 <Menu />
                 <Intro />
                 <About />

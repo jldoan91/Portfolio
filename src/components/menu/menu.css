@@ -1,6 +1,37 @@
 .profileImg{
-    height: 10rem;
-    width: 10rem;
+    margin: 10%;
+    width: 55%;
+    height: auto;
     border-radius: 5rem;
     background: gray;
+}
+
+.menu{
+    text-align: center;
+    transition: all 0.3s;
+    background: #ddd;
+    top: 0;
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+}
+
+.nameTitle{
+    margin: 5rem 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li, a {
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .menu{
+        display: none;
+    }
 }

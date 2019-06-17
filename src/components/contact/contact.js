@@ -8,7 +8,7 @@ const Contact = class Contact extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div className={styles.contact}></div>
         )
     }
 }

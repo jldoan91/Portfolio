@@ -8,7 +8,7 @@ const Portfolio = class Portfolio extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div className={styles.portfolio}></div>
         )
     }
 }

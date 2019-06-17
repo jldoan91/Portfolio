@@ -8,7 +8,7 @@ const About = class About extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <div className={styles.about}></div>
         )
     }
 }
