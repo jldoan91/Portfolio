@@ -4,3 +4,9 @@
     height: 100vh;
     background: red;
 }
+
+@media (max-width: 600px) {
+    .about{
+        width: 100%;
+    }
+}

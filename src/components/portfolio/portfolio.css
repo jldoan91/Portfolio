@@ -4,3 +4,9 @@
     height: 100vh;
     background: green;
 }
+
+@media (max-width: 600px) {
+    .portfolio{
+        width: 100%;
+    }
+}

@@ -26,6 +26,20 @@ ul {
     padding: 0;
 }
 
+.navLink{
+    cursor: pointer;
+}
+
+.navLink:hover{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 li, a {
     margin: 10px 0;
 }

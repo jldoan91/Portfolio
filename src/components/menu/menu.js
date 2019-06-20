@@ -16,10 +16,10 @@ const Menu = class Menu extends React.Component {
                 </div>
                 <div className={styles.navBar}>
                     <ul>
-                        <li><a href="" className={styles.navLink}>Home</a></li>
-                        <li><a href="" className={styles.navLink}>About</a></li>
-                        <li><a href="" className={styles.navLink}>Work</a></li>
-                        <li><a href="" className={styles.navLink}>Contact</a></li>
+                        <li><a onClick={() => this.props.setActive('Intro')} className={(this.props.current === 'Intro') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Home</a></li>
+                        <li><a onClick={() => this.props.setActive('About')} className={(this.props.current === 'About') ? `${styles.navLink} ${styles.active}` : styles.navLink}>About</a></li>
+                        <li><a onClick={() => this.props.setActive('Portfolio')} className={(this.props.current === 'Portfolio') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Work</a></li>
+                        <li><a onClick={() => this.props.setActive('Contact')} className={(this.props.current === 'Contact') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact</a></li>
                     </ul>
                 </div>
             </div>

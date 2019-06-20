@@ -4,3 +4,9 @@
     height: 100vh;
     background: yellow;
 }
+
+@media (max-width: 600px) {
+    .contact{
+        width: 100%;
+    }
+}

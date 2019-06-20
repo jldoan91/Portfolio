@@ -10,16 +10,30 @@ import styles from './index.css';
 const App = class App extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            active: 'Intro'
+        }
+    }
+
+    setActive = (section) => {
+        this.setState({ active: section })
     }
 
     render() {
+        let section;
+        if (this.state.active === 'Intro') {
+            section = <Intro />
+        } else if (this.state.active === 'About') {
+            section = <About />
+        } else if (this.state.active === 'Portfolio') {
+            section = <Portfolio />
+        } else if (this.state.active === 'Contact') {
+            section = <Contact />
+        }
         return (
             <div className={styles.main}>
-                <Menu />
-                <Intro />
-                <About />
-                <Portfolio />
-                <Contact />
+                <Menu current={this.state.active} setActive={this.setActive} />
+                {section}
             </div >
         );
     }
