@@ -5,6 +5,7 @@ import Intro from './components/intro/intro';
 import About from './components/about/about';
 import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
+import Resume from './components/resume/resume';
 import styles from './index.css';
 
 const App = class App extends React.Component {
@@ -29,6 +30,8 @@ const App = class App extends React.Component {
             section = <Portfolio />
         } else if (this.state.active === 'Contact') {
             section = <Contact />
+        } else if (this.state.active === 'Resume') {
+            section = <Resume />
         }
         return (
             <div className={styles.main}>
