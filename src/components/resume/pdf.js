@@ -12,7 +12,7 @@ const PDF = class PDF extends React.Component {
     }
 
     prevPage = () => {
-        if (this.state.pageNum === 2) {
+        if (this.state.pageNum > 1) {
             this.setState(prevState => ({
                 pageNum: (prevState.pageNum - 1)
             }))
@@ -20,7 +20,7 @@ const PDF = class PDF extends React.Component {
     }
 
     nextPage = () => {
-        if (this.state.pageNum === 1) {
+        if (this.state.pageNum < this.state.numberPages) {
             this.setState(prevState => ({
                 pageNum: (prevState.pageNum + 1)
             }))
