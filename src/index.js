@@ -12,7 +12,7 @@ const App = class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: 'Intro'
+            active: 'Resume'
         }
     }
 

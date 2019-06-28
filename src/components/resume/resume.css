@@ -1,5 +1,26 @@
-.resume {
-    display: flex;
-    flex-flow: row wrap;
-    width: 74%;
+.resume{
+    float: right;
+    width: 73%;
+    height: 100vh;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.resume div{
+    border: solid 1px black;
+    padding: 0 1%;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.center{
+    padding: 0 5%;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
 }
