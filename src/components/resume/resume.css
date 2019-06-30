@@ -1,9 +1,14 @@
 .resume{
     float: right;
     width: 73%;
-    height: 100vh;
+    /* height: 100vh; */
     text-align: center;
-    font-size: 0.75rem;
+    display: flex;
+}
+
+.pageOne, .pageTwo {
+    width: 50%;
+    margin: 0 0.5%;
 }
 
 .resume div{
