@@ -30,6 +30,7 @@ ul {
 
 .navLink{
     cursor: pointer;
+    color: white;
 }
 
 .navLink:hover{
@@ -39,6 +40,7 @@ ul {
 }
 
 .active{
+    color: black;
     font-weight: bold;
     text-decoration: underline;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
