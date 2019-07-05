@@ -12,26 +12,30 @@ const App = class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: 'Intro'
+            active: 'Contact'
         }
     }
 
     setActive = (section) => {
         this.setState({ active: section })
     }
-
     render() {
         let section;
-        if (this.state.active === 'Intro') {
-            section = <Intro />
-        } else if (this.state.active === 'About') {
-            section = <About />
-        } else if (this.state.active === 'Portfolio') {
-            section = <Portfolio />
-        } else if (this.state.active === 'Contact') {
-            section = <Contact />
-        } else if (this.state.active === 'Resume') {
-            section = <Resume />
+        switch (this.state.active) {
+            case 'About':
+                section = <About />;
+                break;
+            case 'Portfolio':
+                section = <Portfolio />;
+                break;
+            case 'Contact':
+                section = <Contact />;
+                break;
+            case 'Resume':
+                section = <Resume />;
+                break;
+            default:
+                section = <Intro />
         }
         return (
             <div className={styles.main}>
