@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './contact.css';
-import Axios from 'axios';
+import axios from 'axios';
 
 const Contact = class Contact extends React.Component {
     constructor(props) {
@@ -9,34 +9,42 @@ const Contact = class Contact extends React.Component {
             name: '',
             email: '',
             subject: '',
-            message: ''
+            message: '',
+            sent: false,
+            btnTxt: 'Send Message'
         }
-        this.baseState = {...this.state}
     }
 
-    handleSubmit = e => {
+    formSubmit = (e) => {
         e.preventDefault();
-        axios({
-            method: "POST",
-            url: "https://localhost:3002/send",
-            data: {
-                name: this.state.name,
-                email: this.state.email,
-                subject: this.state.subject,
-                message: this.state.message
-            }
-        }).then((response) => {
-            if(response.data.msg === 'success'){
-                alert("Message Sent!");
-                this.resetForm();
-            }else if(response.data.msg === 'fail'){
-                alert("Message Failed to Send!");
-            }
+
+        this.setState({
+            btnTxt: '...sending'
         })
+
+        let data = {
+            name: this.state.name,
+            email: this.state.email,
+            subject: this.state.subject,
+            message: this.state.message
+        }
+
+        axios.post('API_URI', data)
+            .then(res => {
+                this.setState({sent: true}, this.resetForm)
+            }).catch( () => {
+                console.log('Message Not Sent!')
+            })
     }
 
     resetForm = () => {
-        this.setState(this.baseState);
+        this.setState({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+            btnTxt: 'Message Sent'
+        })
     }
 
     render() {
@@ -45,12 +53,12 @@ const Contact = class Contact extends React.Component {
                 <h1>Contact Me</h1>
                 <hr />
                 <div className={styles.container}>
-                    <form>
-                            <input type="text" placeholder="First and Last Name"></input>
-                            <input type="email" placeholder="Email Address"></input>
-                            <input type="text" placeholder="Subject"></input>
-                            <textarea placeholder="Enter your message here"></textarea>
-                        <button type="submit">Send Message</button>
+                    <form onSubmit={e => this.formSubmit(e)}>
+                            <input type="text" placeholder="First and Last Name" required onChange={e => this.setState({name: e.target.value})}></input>
+                            <input type="email" placeholder="Email Address" onChange={e => this.setState({email: e.target.value})}></input>
+                            <input type="text" placeholder="Subject" onChange={e => this.setState({subject: e.target.value})}></input>
+                            <textarea placeholder="Enter your message here" required onChange={e => this.setState({message: e.target.value})}></textarea>
+                        <button disabled={this.state.sent} type="submit">{this.state.btnTxt}</button>
                     </form>
                 </div>
             </div >
