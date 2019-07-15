@@ -29,18 +29,7 @@ const Contact = class Contact extends React.Component {
             message: this.state.message
         }
 
-        const API_PATH = 'http://api.the-simple-stuff.com/contact/index.php'
 
-        axios({
-            method: 'post',
-            url: `${API_PATH}`,
-            headers: { 'content-type': 'application/json' },
-            data: data
-        })
-            .then(result => {
-                this.resetForm();
-            })
-            .catch(error => this.setState({ error: error.message }));
     }
 
     resetForm = () => {
