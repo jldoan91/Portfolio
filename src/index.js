@@ -4,7 +4,6 @@ import Menu from './components/menu/menu';
 import About from './components/about/about';
 import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
-import Resume from './components/resume/resume';
 import styles from './index.css';
 
 const App = class App extends React.Component {
@@ -26,9 +25,6 @@ const App = class App extends React.Component {
                 break;
             case 'Contact':
                 section = <Contact />;
-                break;
-            case 'Resume':
-                section = <Resume />;
                 break;
             default:
                 section = <About />

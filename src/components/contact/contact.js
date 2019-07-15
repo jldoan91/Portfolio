@@ -29,12 +29,7 @@ const Contact = class Contact extends React.Component {
             message: this.state.message
         }
 
-        axios.post('API_URI', data)
-            .then(res => {
-                this.setState({sent: true}, this.resetForm)
-            }).catch( () => {
-                console.log('Message Not Sent!')
-            })
+
     }
 
     resetForm = () => {
@@ -54,10 +49,10 @@ const Contact = class Contact extends React.Component {
                 <hr />
                 <div className={styles.container}>
                     <form onSubmit={e => this.formSubmit(e)}>
-                            <input type="text" placeholder="First and Last Name" required onChange={e => this.setState({name: e.target.value})}></input>
-                            <input type="email" placeholder="Email Address" onChange={e => this.setState({email: e.target.value})}></input>
-                            <input type="text" placeholder="Subject" onChange={e => this.setState({subject: e.target.value})}></input>
-                            <textarea placeholder="Enter your message here" required onChange={e => this.setState({message: e.target.value})}></textarea>
+                        <input type="text" placeholder="First and Last Name" required onChange={e => this.setState({ name: e.target.value })}></input>
+                        <input type="email" placeholder="Email Address" onChange={e => this.setState({ email: e.target.value })}></input>
+                        <input type="text" placeholder="Subject" onChange={e => this.setState({ subject: e.target.value })}></input>
+                        <textarea placeholder="Enter your message here" required onChange={e => this.setState({ message: e.target.value })}></textarea>
                         <button disabled={this.state.sent} type="submit">{this.state.btnTxt}</button>
                     </form>
                 </div>
