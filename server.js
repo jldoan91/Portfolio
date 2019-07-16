@@ -8,8 +8,12 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/*', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
+app.get('/resume', (req, res) => {
+    res.sendFile(path.join(__dirname, "Josh Doan's resume.pdf"));
+})
 
 app.listen(port);
