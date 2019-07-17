@@ -1,5 +1,5 @@
 const express = require('express');
-// const favicon = require('express-favicon');
+const favicon = require('express-favicon');
 const path = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
@@ -9,13 +9,9 @@ const nodemailer = require('nodemailer');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
-// app.use(favicon(__dirname + '/dist/favicon.ico'));
+app.use(favicon(__dirname + '/dist/favicon.ico'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
-
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
 
 app.get('/resume', (req, res) => {
     res.sendFile(path.join(__dirname, "Josh Doan's resume.pdf"));
@@ -52,5 +48,9 @@ app.post('/contact', function (req, res) {
         }
     })
 })
+
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(port);
