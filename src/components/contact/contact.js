@@ -60,12 +60,17 @@ const Contact = class Contact extends React.Component {
                 <hr />
                 <div className={styles.container}>
                     <form>
-                        <input type="text" placeholder="First and Last Name" name="name" value={this.state.name} required onChange={e => this.setState({ name: e.target.value })}></input>
-                        <input type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
-                        <input type="text" placeholder="Subject" name="subject" value={this.state.subject} onChange={e => this.setState({ subject: e.target.value })}></input>
-                        <textarea placeholder="Enter your message here" name="message" value={this.state.message} required onChange={e => this.setState({ message: e.target.value })}></textarea>
-                        <button onClick={e => this.formSubmit(e)} disabled={this.state.sent} type="submit">{this.state.btnTxt}</button>
+                        <input className={styles.input} type="text" placeholder="First and Last Name" name="name" value={this.state.name} required onChange={e => this.setState({ name: e.target.value })}></input>
+                        <input className={styles.input} type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
+                        <input className={styles.input} type="text" placeholder="Subject" name="subject" value={this.state.subject} onChange={e => this.setState({ subject: e.target.value })}></input>
+                        <textarea className={styles.textarea} placeholder="Enter your message here" name="message" value={this.state.message} required onChange={e => this.setState({ message: e.target.value })}></textarea>
+                        <button className={styles.button} onClick={e => this.formSubmit(e)} disabled={this.state.sent} type="submit">{this.state.btnTxt}</button>
                     </form>
+                </div>
+                <div className={styles.socialmedia}>
+                    <a href="https://github.com/jldoan91" target="_blank"><i className={`fab fa-github fa-5x ${styles.icon}`}></i></a>
+                    <a href="https://twitter.com/jldoan91" target="_blank"><i className={`fab fa-twitter fa-5x ${styles.icon}`}></i></a>
+                    <a href="#" target="_blank"><i className={`fab fa-linkedin fa-5x ${styles.icon}`}></i></a>
                 </div>
             </div >
         )

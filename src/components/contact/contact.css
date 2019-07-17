@@ -10,7 +10,21 @@
     margin: auto;
 }
 
-input{
+.socialmedia{
+    margin: 5rem auto;
+    /* display: flex; */
+}
+
+.icon{
+    color: #999;
+    margin: 2.5rem;
+}
+
+.icon:hover{
+    color: #ccc;
+}
+
+.input{
     width: 100%;
     padding: 0.5rem 1rem;
     margin: 0.5rem auto;
@@ -18,7 +32,7 @@ input{
     border: 1px solid #888;
 }
 
-button{
+.button{
     background: #ddd;
     margin: 1rem;
     padding: 1rem;
@@ -27,18 +41,18 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+.button:hover{
     background: #999;
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 }
 
-button:disabled{
+.button:disabled{
     cursor: not-allowed;
     background: #ddd;
 }
 
-textarea{
+.textarea{
     margin: 0.5rem auto;
     padding: 0.5rem 1rem;
     width: 100%;
@@ -47,7 +61,7 @@ textarea{
     border: 1px solid #888;
 }
 
-input:focus, textarea:focus{
+.input:focus, .textarea:focus{
     outline: none;
     border: 3px solid black;
 }

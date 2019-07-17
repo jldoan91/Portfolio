@@ -17,7 +17,7 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.14",
     "nodemailer": "^6.2.1",
     "path": "^0.12.7",
     "react": "16.7.0",
@@ -27,6 +27,7 @@
     "react-router-dom": "^4.3.1",
     "react-svg": "^7.2.5",
     "react-svg-inline": "^2.1.1",
+    "react-transition-group": "^4.2.1",
     "redux": "4.0.1",
     "redux-thunk": "^2.3.0",
     "webpack-cli": "3.2.1"
