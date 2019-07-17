@@ -20,7 +20,7 @@ app.get('/resume', (req, res) => {
 let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: proccess.env.GMAIL__USER,
+        user: process.env.GMAIL__USER,
         pass: process.env.GMAIL__PASS
     }
 });
