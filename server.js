@@ -36,7 +36,7 @@ transporter.verify((error, success) => {
 app.post('/contact', function (req, res) {
     let mail = {
         from: req.body.email,
-        to: 'jldoanfreelance@gmail.com',
+        to: process.env.TARGET__EMAIL,
         subject: 'New Message - Portfolio Contact Form',
         text: `From: ${req.body.name} \n Subject: ${req.body.subject} \n Message: ${req.body.message}`
     }
