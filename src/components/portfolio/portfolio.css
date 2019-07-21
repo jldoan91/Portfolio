@@ -2,7 +2,12 @@
     float: right;
     width: 74%;
     height: 100vh;
-    background: green;
+    text-align: center;
+    /* background: green; */
+}
+
+.projects{
+    padding: 2.5rem;
 }
 
 @media (max-width: 600px) {
