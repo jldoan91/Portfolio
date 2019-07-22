@@ -6,8 +6,8 @@ const Portfolio = class Portfolio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            node: <a href="https://nodejs.org/en/" target="_blank"><i className="fab fa-node-js" /> Node </a>,
-            react: <a href="https://reactjs.org/" target="_blank"><i className="fab fa-react" /> React</a>
+            node: <a className={styles.techLink} href="https://nodejs.org/en/" target="_blank">Node</a>,
+            react: <a className={styles.techLink} href="https://reactjs.org/" target="_blank">React</a>
         }
     }
 

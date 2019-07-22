@@ -16,12 +16,12 @@
     width: 90%
 }
 
-a {
+ul>li>a {
     text-decoration: none;
     color: black;
 }
 
-a:hover {
+ul>li>a:hover {
     color: #fff;
     text-decoration: underline;
     text-shadow: 0 0 5px rgba(0, 0, 0, 1);

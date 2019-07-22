@@ -19,6 +19,17 @@
     flex-flow: row wrap;
 }
 
+.techLink{
+    text-decoration: none;
+    color: black;
+}
+
+.techLink:hover{
+    color: #fff;
+    text-decoration: underline;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
 @media (max-width: 600px) {
     .portfolio{
         width: 100%;
