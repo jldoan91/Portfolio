@@ -1,8 +1,12 @@
 .about{
     float: right;
     width: 73.3%;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
+}
+
+.titlehr {
+    margin: 2.5rem;
 }
 
 @media (max-width: 600px) {

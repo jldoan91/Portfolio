@@ -57,7 +57,7 @@ const Contact = class Contact extends React.Component {
         return (
             <div className={styles.contact}>
                 <h1>Contact Me</h1>
-                <hr />
+                <hr className={styles.titlehr} />
                 <div className={styles.container}>
                     <form>
                         <input className={styles.input} type="text" placeholder="First and Last Name" name="name" value={this.state.name} required onChange={e => this.setState({ name: e.target.value })}></input>

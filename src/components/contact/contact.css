@@ -1,7 +1,7 @@
 .contact{
     float: right;
-    width: 74%;
-    height: 100%;
+    width: 73.3%;
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -67,10 +67,8 @@
     border: 3px solid black;
 }
 
-hr {
-    margin-top: 2.5rem;
-    margin-bottom: 5rem;
-    width: 80%;
+.titlehr {
+    margin: 2.5rem;
 }
 
 @media (max-width: 600px) {

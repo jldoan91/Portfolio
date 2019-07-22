@@ -10,7 +10,7 @@ const About = class About extends React.Component {
         return (
             <div className={styles.about}>
                 <h1>About Me</h1>
-                <hr />
+                <hr className={styles.titlehr} />
                 <p>Hello, My name is Josh Doan. I am a web developer based out of Phoenix, Arizona.</p>
             </div>
         )

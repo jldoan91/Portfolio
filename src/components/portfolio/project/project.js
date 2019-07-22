@@ -9,12 +9,17 @@ const Project = class Project extends React.Component {
     render() {
         return (
             <div className={styles.project}>
-                <img src={this.props.picture}></img>
-                <hr/>
-                <h3>{this.props.title}</h3>
-                <ul>
+                <img className={styles.thumbNail} src={this.props.picture}></img>
+                <hr className={styles.titlehr} />
+                <h3 className={styles.title}>{this.props.title}</h3>
+                <div className={styles.description}>
                     {this.props.description}
-                </ul>
+                    {this.props.technologies}
+                    <ul>
+                        <li><a href={this.props.github} target="_blank">Github</a></li>
+                        <li><a href={this.props.app} target="_blank">Hosted App</a></li>
+                    </ul>
+                </div>
             </div>
         )
     }

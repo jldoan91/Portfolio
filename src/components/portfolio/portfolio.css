@@ -1,13 +1,22 @@
 .portfolio{
     float: right;
-    width: 74%;
-    height: 100vh;
+    width: 73.3%;
+    min-height: 100vh;
     text-align: center;
-    /* background: green; */
+}
+
+.title{
+    text-align: center;
+}
+
+.titlehr {
+    margin: 2.5rem;
 }
 
 .projects{
-    padding: 2.5rem;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 @media (max-width: 600px) {
