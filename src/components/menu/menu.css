@@ -57,6 +57,7 @@
 
 @media (max-width: 600px) {
     .menu{
+        width: 0%;
         display: none;
     }
 }

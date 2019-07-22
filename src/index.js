@@ -10,8 +10,13 @@ const App = class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: 'Portfolio'
+            active: 'About',
+            mobileMenu: false
         }
+    }
+
+    menuClick = () => {
+        this.state.mobileMenu ? this.setState({ mobileMenu: false }) : this.setState({ mobileMenu: true })
     }
 
     setActive = (section) => {
@@ -27,13 +32,16 @@ const App = class App extends React.Component {
                 section = <Contact />;
                 break;
             default:
-                section = <About />
+                section = <About />;
         }
         return (
-            <div className={styles.main}>
-                <Menu current={this.state.active} setActive={this.setActive} />
-                {section}
-            </div >
+            <div className={styles.wrapper}>
+                <span onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu}` : `fas fa-times fa-2x ${styles.mobileMenu}`}></span>
+                <div className={styles.main}>
+                    <Menu current={this.state.active} setActive={this.setActive} />
+                    {section}
+                </div >
+            </div>
         );
     }
 };
