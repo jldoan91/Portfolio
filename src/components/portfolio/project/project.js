@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './project.css';
 
 const Project = class Project extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
@@ -16,8 +16,8 @@ const Project = class Project extends React.Component {
                     {this.props.description}
                     {this.props.technologies}
                     <ul>
-                        <li><a href={this.props.github} target="_blank">Github</a></li>
-                        <li><a href={this.props.app} target="_blank">Hosted App</a></li>
+                        <li><a href={this.props.srcControlLink} target="_blank">{this.props.srcControl}</a></li>
+                        <li><a href={this.props.hostLink} target="_blank">{this.props.host}</a></li>
                     </ul>
                 </div>
             </div>
