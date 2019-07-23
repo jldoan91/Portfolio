@@ -6,19 +6,19 @@ import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
 import styles from './index.css';
 // import { CSSTransition } from 'react-transition-group';
-import styled, { keyframes } from 'styled-components';
-import { fadeInRight } from 'react-animations';
+// import styled, { keyframes } from 'styled-components';
+// import { fadeInRight } from 'react-animations';
 
-const fadeInAnimation = keyframes`${fadeInRight}`;
-const fadeIn = styled.div`
-animation: infinite 2s ${fadeInAnimation};
-`;
+// const fadeInAnimation = keyframes`${fadeInRight}`;
+// const fadeIn = styled.div`
+// animation: infinite 2s ${fadeInAnimation};
+// `;
 
-export default (
-    <fadIn>
+// export default (
+//     <fadIn>
 
-    </fadIn>
-)
+//     </fadIn>
+// )
 
 
 const App = class App extends React.Component {
