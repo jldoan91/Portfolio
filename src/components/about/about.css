@@ -12,11 +12,13 @@
 @media (max-width: 600px) {
     .about{
         width: 100%;
+        transition: width 0.5s;
     }
-    .shrunk{
+    .about.shrunk{
         float: right;
         width: 70%;
         min-height: 100vh;
         text-align: center;
+        transition: width 0.5s;
     }
 }

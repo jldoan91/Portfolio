@@ -56,17 +56,23 @@
 }
 
 @media (max-width: 600px) {
+    .profileImg{
+        box-shadow: -1.25px -1.25px 10px rgba(0, 0, 0, 0.75);
+    }
     .menu{
         width: 0%;
-        display: none;
+        opacity: 0;
     }
-    .showMenu{
+    .menu.showMenu{
+        padding: 2.5%;
         text-align: center;
         transition: all 0.3s;
         background: #ddd;
         top: 0;
-        width: 30%;
+        width: 25%;
         min-height: 100vh;
         position: fixed;
+        opacity: 1;
+        transition: width 0.5s;
     }
 }

@@ -13,7 +13,7 @@ const Portfolio = class Portfolio extends React.Component {
 
     render() {
         return (
-            <div className={this.props.shrink ? styles.shrunk : styles.portfolio}>
+            <div className={this.props.shrink ? `${styles.shrunk} ${styles.portfolio}` : styles.portfolio}>
                 <h1 className={styles.title}>Work I've Done</h1>
                 <hr className={styles.titlehr} />
                 <div className={styles.projects}>

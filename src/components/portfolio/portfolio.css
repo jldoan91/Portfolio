@@ -32,11 +32,13 @@
 @media (max-width: 600px) {
     .portfolio{
         width: 100%;
+        transition: width 0.5s;
     }
     .shrunk{
         float: right;
         width: 70%;
         min-height: 100vh;
         text-align: center;
+        transition: width 0.5s;
     }
 }

@@ -5,7 +5,21 @@ import About from './components/about/about';
 import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
 import styles from './index.css';
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from 'react-transition-group';
+import styled, { keyframes } from 'styled-components';
+import { fadeInRight } from 'react-animations';
+
+const fadeInAnimation = keyframes`${fadeInRight}`;
+const fadeIn = styled.div`
+animation: infinite 2s ${fadeInAnimation};
+`;
+
+export default (
+    <fadIn>
+
+    </fadIn>
+)
+
 
 const App = class App extends React.Component {
     constructor(props) {
@@ -37,12 +51,12 @@ const App = class App extends React.Component {
         }
         return (
             <div className={styles.wrapper}>
-                <span onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu}` : `fas fa-times fa-2x ${styles.mobileMenu}`}></span>
+                <span onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa - bars fa - 2x ${styles.mobileMenu} ` : `fas fa - times fa - 2x ${styles.mobileMenu} `}></span>
                 <div className={styles.main}>
-                    <CSSTransition in={this.state.mobileMenu} timeout={200} classNames="menu">
-                        <Menu current={this.state.active} show={this.state.mobileMenu} setActive={this.setActive} />
-                    </CSSTransition>
-                    {section}
+                    <Menu current={this.state.active} show={this.state.mobileMenu} setActive={this.setActive} />
+                    <fadeIn>
+                        {section}
+                    </fadeIn>
                 </div >
             </div>
         );
