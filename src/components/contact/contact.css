@@ -18,6 +18,11 @@
 .icon{
     color: #999;
     margin: 2.5rem;
+    text-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.icon:active{
+    text-shadow: -2.5px -2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .icon:hover{
@@ -35,7 +40,7 @@
 
 .button{
     font-size: 1.1rem;
-    background: #ddd;
+    background: #999;
     margin: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -44,8 +49,13 @@
     box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5)
 }
 
+.button:active{
+    box-shadow: -2.5px -2.5px 5px rgba(0, 0, 0, 0.5);
+}
+
 .button:hover{
-    background: #999;
+    background: #ddd;
+    text-decoration: underline;
     color: white;
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
 }
