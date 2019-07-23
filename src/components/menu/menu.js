@@ -8,7 +8,7 @@ const Menu = class Menu extends React.Component {
 
     render() {
         return (
-            <div className={styles.menu}>
+            <div className={this.props.show ? styles.showMenu : styles.menu}>
                 <img className={styles.profileImg} src="https://media.licdn.com/dms/image/C5603AQHBEZ-p92Fv9g/profile-displayphoto-shrink_200_200/0?e=1566432000&v=beta&t=4OhYIIyAFjALUVVEK4oeSi6c47MP-1GVtfWVYpj4SUI" />
                 <div className={styles.nameTitle}>
                     <h1 className={styles.name}>Josh Doan</h1>

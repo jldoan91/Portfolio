@@ -5,6 +5,7 @@ import About from './components/about/about';
 import Portfolio from './components/portfolio/portfolio';
 import Contact from './components/contact/contact';
 import styles from './index.css';
+import { CSSTransition } from 'react-transition-group';
 
 const App = class App extends React.Component {
     constructor(props) {
@@ -26,19 +27,21 @@ const App = class App extends React.Component {
         let section;
         switch (this.state.active) {
             case 'Portfolio':
-                section = <Portfolio />;
+                section = <Portfolio shrink={this.state.mobileMenu} />;
                 break;
             case 'Contact':
-                section = <Contact />;
+                section = <Contact shrink={this.state.mobileMenu} />;
                 break;
             default:
-                section = <About />;
+                section = <About shrink={this.state.mobileMenu} />;
         }
         return (
             <div className={styles.wrapper}>
                 <span onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu}` : `fas fa-times fa-2x ${styles.mobileMenu}`}></span>
                 <div className={styles.main}>
-                    <Menu current={this.state.active} setActive={this.setActive} />
+                    <CSSTransition in={this.state.mobileMenu} timeout={200} classNames="menu">
+                        <Menu current={this.state.active} show={this.state.mobileMenu} setActive={this.setActive} />
+                    </CSSTransition>
                     {section}
                 </div >
             </div>

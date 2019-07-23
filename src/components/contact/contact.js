@@ -55,7 +55,7 @@ const Contact = class Contact extends React.Component {
 
     render() {
         return (
-            <div className={styles.contact}>
+            <div className={this.props.shrink ? styles.shrunk : styles.contact}>
                 <h1>Contact Me</h1>
                 <hr className={styles.titlehr} />
                 <div className={styles.container}>

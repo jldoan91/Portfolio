@@ -60,4 +60,13 @@
         width: 0%;
         display: none;
     }
+    .showMenu{
+        text-align: center;
+        transition: all 0.3s;
+        background: #ddd;
+        top: 0;
+        width: 30%;
+        min-height: 100vh;
+        position: fixed;
+    }
 }

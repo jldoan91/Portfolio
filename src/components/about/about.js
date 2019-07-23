@@ -8,7 +8,7 @@ const About = class About extends React.Component {
 
     render() {
         return (
-            <div className={styles.about}>
+            <div className={this.props.shrink ? styles.shrunk : styles.about}>
                 <h1>About Me</h1>
                 <hr className={styles.titlehr} />
                 <p>Hello, My name is Josh Doan. I am a web developer based out of Phoenix, Arizona.</p>

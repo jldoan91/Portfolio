@@ -89,4 +89,10 @@
     .contact{
         width: 100%;
     }
+    .shrunk{
+        float: right;
+        width: 70%;
+        min-height: 100vh;
+        text-align: center;
+    }
 }
