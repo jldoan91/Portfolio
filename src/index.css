@@ -14,6 +14,31 @@
     z-index: 1;
     display: none;
 }
+/* .section{
+    & > div {
+        transform: translateY(5rem);
+        opacity: 0;
+        animation: fadeInUp .5s ease-in-out forwards;
+    }
+    &::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+} */
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(5rem);
+        opacity: 0;
+        overflow: hidden;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+        overflow: auto;
+    }
+}
 
 @media(max-width: 600px){
     .mobileMenu{

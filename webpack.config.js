@@ -1,5 +1,7 @@
 const postcssNesting = require('postcss-nesting');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+
 module.exports = {
   entry: {
     polyfill: 'babel-polyfill',
@@ -35,12 +37,15 @@ module.exports = {
         use: [
           'style-loader',
           { loader: 'css-loader', options: { importLoaders: 1, modules: true, localIdentName: '[folder]__[local]--[hash:base64:5]' } },
-          { loader: 'postcss-loader', options: {
-            ident: 'postcss',
-            plugins: () => [
-              postcssNesting(/* pluginOptions */)
-            ]
-          } }
+          {
+            loader: 'postcss-loader', options: {
+              ident: 'postcss',
+              plugins: () => [
+                postcssNesting(/* pluginOptions */),
+                autoprefixer(/* pluginOptions */)
+              ]
+            }
+          }
         ]
       },
       {
