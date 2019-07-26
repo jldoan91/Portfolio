@@ -15,6 +15,7 @@ const Project = class Project extends React.Component {
                 <div className={styles.description}>
                     {this.props.description}
                     {this.props.technologies}
+                    <p>Stored/Hosted on:</p>
                     <ul>
                         <li><a href={this.props.srcControlLink} target="_blank">{this.props.srcControl}</a></li>
                         <li><a href={this.props.hostLink} target="_blank">{this.props.host}</a></li>
