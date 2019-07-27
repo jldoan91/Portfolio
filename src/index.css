@@ -14,27 +14,28 @@
     z-index: 1;
     display: none;
 }
-/* .section{
+
+.section{
     & > div {
-        transform: translateY(5rem);
-        opacity: 0;
-        animation: fadeInUp .5s ease-in-out forwards;
+        transition: all 1s;
+        animation: fadeInRight 1s ease-in-out forwards;
+        box-shadow: 5px 0 10px rgba(0, 0, 0, 0.75);
     }
     &::after{
         content: '';
         display: table;
         clear: both;
     }
-} */
+}
 
-@keyframes fadeInUp {
+@keyframes fadeInRight {
     from {
-        transform: translateY(5rem);
+        transform: translateX(100%);
         opacity: 0;
         overflow: hidden;
     }
     to{
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
         overflow: auto;
     }

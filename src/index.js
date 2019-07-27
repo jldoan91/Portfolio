@@ -13,10 +13,6 @@ const App = class App extends React.Component {
             active: 'About',
             mobileMenu: false
         }
-        // document.getElementsByTagName('body')[0].addEventListener('animationend', (e) => {
-
-        //     console.log(e)
-        // })
     }
 
     menuClick = () => {
@@ -24,19 +20,19 @@ const App = class App extends React.Component {
     }
 
     setActive = (section) => {
-        this.setState({ active: section })
+        this.setState((prevState, prevProps) => ({ delayed: prevState.active, active: section }))
     }
     render() {
         let section;
         switch (this.state.active) {
             case 'Portfolio':
-                section = <Portfolio shrink={this.state.mobileMenu} />;
+                section = <Portfolio active={this.state.active} shrink={this.state.mobileMenu} />;
                 break;
             case 'Contact':
-                section = <Contact shrink={this.state.mobileMenu} />;
+                section = <Contact active={this.state.active} shrink={this.state.mobileMenu} />;
                 break;
             default:
-                section = <About shrink={this.state.mobileMenu} />;
+                section = <About active={this.state.active} shrink={this.state.mobileMenu} />;
         }
         return (
             <div className={styles.wrapper}>
