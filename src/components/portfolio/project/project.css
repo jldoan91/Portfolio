@@ -1,13 +1,14 @@
 .project {
     padding: 0.5rem;
     margin: 1rem auto;
-    width: 20%;
+    min-width: 20%;
+    max-width: 40%;
     border-radius: 0.5rem;
     box-shadow: 2.5px 2.5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .thumbNail{
-    width: 100%;
+    max-width: 100%;
     margin: 0.5rem auto;
 }
 
