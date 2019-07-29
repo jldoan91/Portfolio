@@ -1,8 +1,7 @@
 .contact{
-    float: right;
-    width: 80%;
     min-height: 100vh;
     text-align: center;
+    background: white;
 }
 
 .container{
@@ -86,15 +85,4 @@
 }
 
 @media (max-width: 600px) {
-    .contact{
-        width: 100%;
-        transition: width 0.5s;
-    }
-    .contact.shrunk{
-        float: right;
-        width: 70%;
-        min-height: 100vh;
-        text-align: center;
-        transition: width 0.5s;
-    }
 }

@@ -10,6 +10,7 @@ const App = class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            previous: '',
             active: 'About',
             mobileMenu: false
         }
@@ -20,9 +21,20 @@ const App = class App extends React.Component {
     }
 
     setActive = (section) => {
-        this.setState((prevState, prevProps) => ({ delayed: prevState.active, active: section }))
+        this.setState((prevState) => ({ previous: prevState.active, active: section }))
     }
     render() {
+        let prevSec;
+        switch (this.state.previous) {
+            case 'Portfolio':
+                prevSec = <Portfolio active={this.state.active} shrink={this.state.mobileMenu} />;
+                break;
+            case 'Contact':
+                prevSec = <Contact active={this.state.active} shrink={this.state.mobileMenu} />;
+                break;
+            default:
+                prevSec = <About active={this.state.active} shrink={this.state.mobileMenu} />;
+        }
         let section;
         switch (this.state.active) {
             case 'Portfolio':
@@ -39,7 +51,10 @@ const App = class App extends React.Component {
                 <span onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu} ` : `fas fa-times fa-2x ${styles.mobileMenu} `}></span>
                 <div className={styles.main}>
                     <Menu current={this.state.active} show={this.state.mobileMenu} setActive={this.setActive} />
-                    <div className={styles.section}>
+                    <div className={this.state.mobileMenu ? `${styles.prevSec} ${styles.shrunk}` : styles.prevSec}>
+                        {this.state.previous ? prevSec : null}
+                    </div>
+                    <div className={this.state.mobileMenu ? `${styles.section} ${styles.shrunk}` : styles.section}>
                         {section}
                     </div>
                 </div >
