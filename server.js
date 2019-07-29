@@ -38,7 +38,7 @@ app.post('/contact', function (req, res) {
         from: req.body.email,
         to: process.env.TARGET__EMAIL,
         subject: 'New Message - Portfolio Contact Form',
-        text: `From: ${req.body.name} \n Subject: ${req.body.subject} \n Message: ${req.body.message}`
+        html: `<strong>From:</strong> ${req.body.name} <br/><br/> <strong>Subject:</strong> ${req.body.subject} <br/><br/> <strong>Message:</strong> ${req.body.message}`
     }
     transporter.sendMail(mail, (err, response) => {
         if (err) {
