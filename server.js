@@ -13,10 +13,6 @@ app.use(favicon(__dirname + '/dist/favicon.ico'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/resume', (req, res) => {
-    res.sendFile(path.join(__dirname, "Josh Doan's resume.pdf"));
-})
-
 let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {

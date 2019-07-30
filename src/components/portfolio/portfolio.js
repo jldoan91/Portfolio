@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './portfolio.css';
 import Project from './project/project';
-import tictactoe from '../../../img/tictactoess.png';
-import contactList from '../../../img/contactlistss.png';
+import tictactoe from '../../../docs/tictactoess.png';
+import contactList from '../../../docs/contactlistss.png';
 
 const Portfolio = class Portfolio extends React.Component {
     constructor(props) {
