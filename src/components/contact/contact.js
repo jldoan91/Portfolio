@@ -59,7 +59,7 @@ const Contact = class Contact extends React.Component {
                 <h1 className={styles.header}>Contact Me</h1>
                 <hr className={styles.titlehr} />
                 <div className={styles.container}>
-                    <form name="contact" onSubmit={this.handleFormSubmit} data-netlify="true">
+                    <form onSubmit={this.handleFormSubmit} data-netlify="true">
                         <input type="hidden" name="form-name" value="contact" />
                         <input className={styles.input} type="text" placeholder="First and Last Name" name="name" value={this.state.name} required onChange={e => this.setState({ name: e.target.value })}></input>
                         <input className={styles.input} type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
