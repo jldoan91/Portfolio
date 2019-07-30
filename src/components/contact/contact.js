@@ -46,7 +46,7 @@ const Contact = class Contact extends React.Component {
 
         fetch(e.target.action, {
             method: "POST",
-            headers: { "Content-Type": "application/x-ww-form-urlencoded" },
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "contact", ...data })
         }).then(this.resetForm())
             .catch(error => this.setState({ btnTxt: 'Message Failed to Send' }));
