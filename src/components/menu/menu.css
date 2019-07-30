@@ -82,3 +82,17 @@
         transition: width 0.5s;
     }
 }
+
+@media (max-width: 365px){
+    .nameTitle{
+        & > h1{
+            font-size: 1.15rem;
+        }
+        & > span{
+            font-size: 0.9rem;
+        }
+    }
+    .navList{
+        font-size: 0.95rem;
+    }
+}

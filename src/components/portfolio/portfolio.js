@@ -17,7 +17,7 @@ const Portfolio = class Portfolio extends React.Component {
     render() {
         return (
             <div className={this.props.shrink ? `${styles.shrunk} ${styles.portfolio}` : styles.portfolio}>
-                <h1 className={styles.title}>Work I've Done</h1>
+                <h1 className={styles.header}>Work I've Done</h1>
                 <hr className={styles.titlehr} />
                 <div className={styles.projects}>
                     <Project title="Unbeatable Tic-Tac-Toe" picture={tictactoe} description={<p>An unbeatable tic tac toe game built with the minimax algorithm using:</p>} technologies={<p>{this.state.node} + {this.state.react}</p>} srcControlLink='https://github.com/jldoan91/tictactoe' srcControl="GitHub" hostLink='https://jldoantictactoe.herokuapp.com/' host="Heroku" />
