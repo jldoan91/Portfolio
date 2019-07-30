@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './menu.css';
-import Pdf from '../../../docs/Resume.pdf';
+// import Pdf from '../../../docs/Resume.pdf';
 
 const Menu = class Menu extends React.Component {
     constructor(props) {
@@ -20,7 +20,7 @@ const Menu = class Menu extends React.Component {
                         <li className={styles.navList}><a onClick={() => this.props.setActive('About')} className={(this.props.current === 'About') ? `${styles.navLink} ${styles.active}` : styles.navLink}>About</a></li>
                         <li className={styles.navList}><a onClick={() => this.props.setActive('Portfolio')} className={(this.props.current === 'Portfolio') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Work</a></li>
                         <li className={styles.navList}><a onClick={() => this.props.setActive('Contact')} className={(this.props.current === 'Contact') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact</a></li>
-                        <li className={styles.navList}><a href={Pdf} target="_blank" className={styles.navLink}>Resume</a></li>
+                        {/* <li className={styles.navList}><a href={Pdf} target="_blank" className={styles.navLink}>Resume</a></li> */}
                     </ul>
                 </div>
             </div>
