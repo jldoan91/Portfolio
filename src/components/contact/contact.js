@@ -31,8 +31,7 @@ const Contact = class Contact extends React.Component {
         })
     }
 
-    formSubmit = (e) => {
-        e.preventDefault()
+    handleFormSubmit = (e) => {
 
         let data = {
             name: this.state.name,
@@ -45,12 +44,13 @@ const Contact = class Contact extends React.Component {
             btnTxt: '...sending'
         })
 
-        fetch("/", {
+        fetch(e.target.action, {
             method: "POST",
             headers: { "Content-Type": "application/x-ww-form-urlencoded" },
             body: encode({ "form-name": "contact", ...data })
         }).then(this.resetForm())
             .catch(error => this.setState({ btnTxt: 'Message Failed to Send' }));
+        e.preventDefault()
     }
 
     render() {
@@ -59,13 +59,13 @@ const Contact = class Contact extends React.Component {
                 <h1 className={styles.header}>Contact Me</h1>
                 <hr className={styles.titlehr} />
                 <div className={styles.container}>
-                    <form name="contact" data-netlify="true">
+                    <form name="contact" onSubmit={this.handleFormSubmit} data-netlify="true">
                         <input type="hidden" name="form-name" value="contact" />
                         <input className={styles.input} type="text" placeholder="First and Last Name" name="name" value={this.state.name} required onChange={e => this.setState({ name: e.target.value })}></input>
                         <input className={styles.input} type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
                         <input className={styles.input} type="text" placeholder="Subject" name="subject" value={this.state.subject} onChange={e => this.setState({ subject: e.target.value })}></input>
                         <textarea className={styles.textarea} placeholder="Enter your message here" name="message" value={this.state.message} required onChange={e => this.setState({ message: e.target.value })}></textarea>
-                        <button className={styles.button} onClick={e => this.formSubmit(e)} disabled={this.state.sent} type="submit">{this.state.btnTxt}</button>
+                        <button className={styles.button} disabled={this.state.sent} type="submit">{this.state.btnTxt}</button>
                     </form>
                 </div>
                 <div className={styles.socialmedia}>
