@@ -41,7 +41,6 @@
 
 .title{
     color: #fff;
-    text-decoration: underline;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
 }
 
@@ -56,6 +55,13 @@
 }
 
 @media (max-width: 600px) {
+    .navList{
+        font-size: 1.1rem;
+        margin: 1.25rem 0;
+    }
+    .name{
+        font-size: 1.35rem;
+    }
     .profileImg{
         box-shadow: -1.25px -1.25px 10px rgba(0, 0, 0, 0.75);
     }

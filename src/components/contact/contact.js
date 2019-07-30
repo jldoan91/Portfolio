@@ -68,10 +68,10 @@ const Contact = class Contact extends React.Component {
                     </form>
                 </div>
                 <div className={styles.socialmedia}>
-                    <a href="https://www.linkedin.com/in/josh-doan-328995138" target="_blank"><i className={`fab fa-linkedin fa-5x ${styles.icon}`}></i></a>
-                    <a href="https://github.com/jldoan91" target="_blank"><i className={`fab fa-github-square fa-5x ${styles.icon}`}></i></a>
-                    <a href="#" target="_blank"><i className={`fab fa-facebook-square fa-5x ${styles.icon}`}></i></a>
-                    <a href="https://twitter.com/jldoan91" target="_blank"><i className={`fab fa-twitter-square fa-5x ${styles.icon}`}></i></a>
+                    <a className={styles.socialIcon} href="https://www.linkedin.com/in/josh-doan-328995138" target="_blank"><i className={`fab fa-linkedin fa-5x ${styles.icon}`}></i></a>
+                    <a className={styles.socialIcon} href="https://github.com/jldoan91" target="_blank"><i className={`fab fa-github-square fa-5x ${styles.icon}`}></i></a>
+                    <a className={styles.socialIcon} href="https://www.facebook.com/josh.doan.54" target="_blank"><i className={`fab fa-facebook-square fa-5x ${styles.icon}`}></i></a>
+                    <a className={styles.socialIcon} href="https://twitter.com/jldoan91" target="_blank"><i className={`fab fa-twitter-square fa-5x ${styles.icon}`}></i></a>
                 </div>
             </div >
         )

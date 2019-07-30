@@ -9,9 +9,11 @@ const Project = class Project extends React.Component {
     render() {
         return (
             <div className={styles.project}>
-                <img className={styles.thumbNail} src={this.props.picture}></img>
+                <div className={styles.imgContainer}>
+                    <img className={styles.thumbNail} src={this.props.picture}></img>
+                </div>
                 <hr className={styles.titlehr} />
-                <h3 className={styles.title}>{this.props.title}</h3>
+                <h2 className={styles.title}>{this.props.title}</h2>
                 <div className={styles.description}>
                     {this.props.description}
                     {this.props.technologies}
