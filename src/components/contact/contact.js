@@ -1,6 +1,11 @@
 import React from 'react';
 import styles from './contact.css';
-import axios from 'axios';
+
+const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodedURIComponent(key) + "=" + encodedURIComponent(data[key]))
+        .join("&");
+}
 
 const Contact = class Contact extends React.Component {
     constructor(props) {
@@ -27,30 +32,26 @@ const Contact = class Contact extends React.Component {
     }
 
     formSubmit = (e) => {
-        e.preventDefault()
+
+        let data = {
+            name: this.state.name,
+            email: this.state.email,
+            subject: this.state.subject,
+            message: this.state.message
+        }
 
         this.setState({
             btnTxt: '...sending'
         })
 
-        axios({
+        fetch("/", {
             method: "POST",
-            url: "https://jldoanmailer.herokuapp.com/contact",
-            data: {
-                name: this.state.name,
-                email: this.state.email,
-                subject: this.state.subject,
-                message: this.state.message
-            }
-        }).then((response => {
-            if (response.data.msg === 'success') {
-                this.resetForm()
-            } else if (response.data.msg === 'fail') {
-                this.setState({
-                    btnTxt: 'Message Failed to Send'
-                })
-            }
-        }))
+            headers: { "Content-Type": "application/x-ww-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...data })
+        }).then(this.resetForm())
+            .catch(error => this.setState({ btnTxt: 'Message Failed to Send' }));
+
+        e.preventDefault()
     }
 
     render() {
@@ -59,7 +60,7 @@ const Contact = class Contact extends React.Component {
                 <h1 className={styles.header}>Contact Me</h1>
                 <hr className={styles.titlehr} />
                 <div className={styles.container}>
-                    <form>
+                    <form name="contact">
                         <input className={styles.input} type="text" placeholder="First and Last Name" name="name" value={this.state.name} required onChange={e => this.setState({ name: e.target.value })}></input>
                         <input className={styles.input} type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
                         <input className={styles.input} type="text" placeholder="Subject" name="subject" value={this.state.subject} onChange={e => this.setState({ subject: e.target.value })}></input>
