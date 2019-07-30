@@ -35,7 +35,7 @@ const Contact = class Contact extends React.Component {
 
         axios({
             method: "POST",
-            url: "/contact",
+            url: "https://jldoanmailer.herokuapp.com/contact",
             data: {
                 name: this.state.name,
                 email: this.state.email,
