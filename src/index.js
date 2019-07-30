@@ -48,7 +48,7 @@ const App = class App extends React.Component {
         }
         return (
             <div className={styles.wrapper}>
-                <span onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu} ` : `fas fa-times fa-2x ${styles.mobileMenu} `}></span>
+                <i onClick={this.menuClick} className={!this.state.mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu} ` : `fas fa-times fa-2x ${styles.mobileMenu} `} />
                 <div className={styles.main}>
                     <Menu current={this.state.active} show={this.state.mobileMenu} setActive={this.setActive} />
                     <div className={this.state.mobileMenu ? `${styles.prevSec} ${styles.shrunk}` : styles.prevSec}>

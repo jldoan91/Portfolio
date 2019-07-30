@@ -10,14 +10,14 @@
 }
 
 .socialmedia{
-    width: 50%;
-    margin: 5rem auto;
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .socialIcon{
-    margin: auto;
+    /* margin: auto; */
 }
 
 .icon{
