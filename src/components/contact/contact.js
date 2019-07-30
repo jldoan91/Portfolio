@@ -32,6 +32,7 @@ const Contact = class Contact extends React.Component {
     }
 
     formSubmit = (e) => {
+        e.preventDefault()
 
         let data = {
             name: this.state.name,
@@ -50,8 +51,6 @@ const Contact = class Contact extends React.Component {
             body: encode({ "form-name": "contact", ...data })
         }).then(this.resetForm())
             .catch(error => this.setState({ btnTxt: 'Message Failed to Send' }));
-
-        e.preventDefault()
     }
 
     render() {
