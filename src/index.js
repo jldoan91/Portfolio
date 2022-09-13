@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import ReactDOM from 'react-dom';
 import Menu from './components/menu/menu';
 import About from './components/about/about';
@@ -8,8 +8,8 @@ import styles from './index.css';
 
 function App(){
     const [mobileMenu, setMobileMenu] = useState(false);
-    const [Active, setActive] = useState(() => About);
-    const [previous, setPrevious] = useState('');
+    const [active, setActive] = useState('about');
+    const previous = useRef('');
 
     const sections = {
         'about': About,
@@ -22,68 +22,23 @@ function App(){
     }
 
     function updateActive(section){
-        switch (this.state.previous) {
-                    case 'Portfolio':
-                        setActive(() => Portfolio);
-                        // prevSec = <Portfolio active={this.state.active} shrink={this.state.mobileMenu} />;
-                        break;
-                    // case 'Contact':
-                    //     prevSec = <Contact active={this.state.active} shrink={this.state.mobileMenu} />;
-                    //     break;
-                    // default:
-                    //     prevSec = <About active={this.state.active} shrink={this.state.mobileMenu} />;
-                }
-                let section;
-                switch (this.state.active) {
-                    case 'Portfolio':
-                        section = <Portfolio active={this.state.active} shrink={this.state.mobileMenu} />;
-                        break;
-                    // case 'Contact':
-                    //     section = <Contact active={this.state.active} shrink={this.state.mobileMenu} />;
-                    //     break;
-                    // default:
-                    //     section = <About active={this.state.active} shrink={this.state.mobileMenu} />;
-            }
-
-        setPrevious(Active);
+        previous.current = active;
         setActive(section);
     }
 
-
-
-    // let prevSec;
-    //     switch (this.state.previous) {
-    //         case 'Portfolio':
-    //             prevSec = <Portfolio active={this.state.active} shrink={this.state.mobileMenu} />;
-    //             break;
-    //         case 'Contact':
-    //             prevSec = <Contact active={this.state.active} shrink={this.state.mobileMenu} />;
-    //             break;
-    //         default:
-    //             prevSec = <About active={this.state.active} shrink={this.state.mobileMenu} />;
-    //     }
-    //     let section;
-    //     switch (this.state.active) {
-    //         case 'Portfolio':
-    //             section = <Portfolio active={this.state.active} shrink={this.state.mobileMenu} />;
-    //             break;
-    //         case 'Contact':
-    //             section = <Contact active={this.state.active} shrink={this.state.mobileMenu} />;
-    //             break;
-    //         default:
-    //             section = <About active={this.state.active} shrink={this.state.mobileMenu} />;
-    //     }
+    const Component = sections[active];
+    const PrevComponent = sections[previous.current];
 
     return (
         <div className={styles.wrapper}>
                 <i onClick={menuClick} className={!mobileMenu ? `fas fa-bars fa-2x ${styles.mobileMenu} ` : `fas fa-times fa-2x ${styles.mobileMenu} `} />
                 <div className={styles.main}>
-                    <Menu current={Active} show={mobileMenu} updateActive={updateActive} />
+                    <Menu current={active} show={mobileMenu} updateActive={updateActive} />
                     <div className={mobileMenu ? `${styles.prevSec} ${styles.shrunk}` : styles.prevSec}>
-                        {/* {this.state.previous ? prevSec : null} */}
+                        {previous.current && <PrevComponent active={active} shrink={mobileMenu}/>}
                     </div>
                     <div className={mobileMenu ? `${styles.section} ${styles.shrunk}` : styles.section}>
-                        <Active/>
+                        <Component active={active} shrink={mobileMenu}/>
                     </div>
                 </div>
             </div>

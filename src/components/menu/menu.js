@@ -11,9 +11,9 @@ export default function Menu({ show, current, updateActive }) {
             </div>
             <div className={styles.navBar}>
                 <ul>
-                    <li className={styles.navList}><a onClick={() => updateActive('About')} className={(current === 'About') ? `${styles.navLink} ${styles.active}` : styles.navLink}>About</a></li>
-                    <li className={styles.navList}><a onClick={() => updateActive('Portfolio')} className={(current === 'Portfolio') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Work</a></li>
-                    <li className={styles.navList}><a onClick={() => updateActive('Contact')} className={(current === 'Contact') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact</a></li>
+                    <li className={styles.navList}><a onClick={() => updateActive('about')} className={(current === 'about') ? `${styles.navLink} ${styles.active}` : styles.navLink}>About</a></li>
+                    <li className={styles.navList}><a onClick={() => updateActive('portfolio')} className={(current === 'portfolio') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Work</a></li>
+                    <li className={styles.navList}><a onClick={() => updateActive('contact')} className={(current === 'contact') ? `${styles.navLink} ${styles.active}` : styles.navLink}>Contact</a></li>
                 </ul>
             </div>
         </div>
