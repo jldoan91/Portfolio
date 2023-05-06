@@ -57,6 +57,6 @@
     "style-loader": "^0.23.1",
     "sugarss": "^2.0.0",
     "webpack": "4.29.0",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^4.13.3"
   }
 }
